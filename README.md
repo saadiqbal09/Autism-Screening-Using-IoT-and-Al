@@ -55,17 +55,21 @@ This leads to **delayed diagnosis**, especially in rural or resource-limited set
 - NumPy, SciPy
 - SoundDevice
 - Machine Learning (Random Forest – conceptual)
+- 
+##  Implemented Module: Speech Analysis (Whisper ASR)
 
-## Project Structure
-Autism-Screening-Using-IoT-and-AI
-│
-├── code/
-│ ├── drishti_speech_app.py
-│ ├── requirements.txt
-│
-├── docs/
-│ ├── Project_Report.pdf
-│ ├── Project_Presentation.pptx
-│
-├── README.md
-└── LICENSE
+This repository currently includes a **fully functional Speech Analysis prototype**, implemented using OpenAI’s Whisper model.
+
+### Features
+- Audio recording via microphone
+- Multilingual speech transcription
+- Word-level timestamp extraction
+- Detection of:
+  - Response delay
+  - Speech blocks (long pauses)
+  - Repetitions (stuttering)
+  - Prolongations (elongated words)
+- Rule-based ASD risk estimation
+- Interactive GUI (Tkinter)
+
+
