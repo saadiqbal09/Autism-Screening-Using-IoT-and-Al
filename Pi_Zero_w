@@ -1,0 +1,32 @@
+import sounddevice as sd
+from scipy.io.wavfile import write
+import numpy as np
+import requests
+
+# -------- SETTINGS --------
+SERVER_URL = "http://LAPTOP_IP:5000/analyze"  # change this
+SAMPLE_RATE = 16000
+DURATION = 6  # seconds
+AUDIO_FILE = "audio.wav"
+
+print("Recording audio...")
+audio = sd.rec(
+    int(DURATION * SAMPLE_RATE),
+    samplerate=SAMPLE_RATE,
+    channels=1,
+    dtype="int16"
+)
+sd.wait()
+
+write(AUDIO_FILE, SAMPLE_RATE, audio)
+print("Recording complete")
+
+print("Sending audio to server...")
+with open(AUDIO_FILE, "rb") as f:
+    response = requests.post(
+        SERVER_URL,
+        files={"audio": f}
+    )
+
+print("Server Response:")
+print(response.text)
