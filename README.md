@@ -67,6 +67,8 @@ This repository currently includes a **fully functional Speech Analysis prototyp
 - Detection of:
   - Response delay
   - Speech blocks (long pauses)
+  will update soon
+
   - Repetitions (stuttering)
   - Prolongations (elongated words)
 - Rule-based ASD risk estimation
